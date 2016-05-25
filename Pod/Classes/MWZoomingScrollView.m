@@ -420,6 +420,13 @@
     [self handleDoubleTap:[touch locationInView:imageView]];
 }
 
+- (void)imageView:(UIImageView *)imageView singleTapRecognizer:(UIGestureRecognizer *)touch {
+    [self handleSingleTap:[touch locationInView:imageView]];
+}
+- (void)imageView:(UIImageView *)imageView doubleTapRecognizer:(UIGestureRecognizer *)touch {
+    [self handleDoubleTap:[touch locationInView:imageView]];
+}
+
 // Background View
 - (void)view:(UIView *)view singleTapDetected:(UITouch *)touch {
     // Translate touch location to image view location

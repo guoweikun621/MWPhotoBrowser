@@ -24,4 +24,6 @@
 - (void)imageView:(UIImageView *)imageView doubleTapDetected:(UITouch *)touch;
 - (void)imageView:(UIImageView *)imageView tripleTapDetected:(UITouch *)touch;
 
+- (void)imageView:(UIImageView *)imageView singleTapRecognizer:(UIGestureRecognizer *)touch;
+- (void)imageView:(UIImageView *)imageView doubleTapRecognizer:(UIGestureRecognizer *)touch;
 @end
