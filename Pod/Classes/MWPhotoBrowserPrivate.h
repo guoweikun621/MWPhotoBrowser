@@ -121,7 +121,7 @@
 - (void)setControlsHidden:(BOOL)hidden animated:(BOOL)animated permanent:(BOOL)permanent;
 - (void)toggleControls;
 - (BOOL)areControlsHidden;
-
+- (void)tapRecognizer:(UITapGestureRecognizer *)recognizer;
 // Data
 - (NSUInteger)numberOfPhotos;
 - (id<MWPhoto>)photoAtIndex:(NSUInteger)index;

@@ -420,12 +420,15 @@
     [self handleDoubleTap:[touch locationInView:imageView]];
 }
 
-- (void)imageView:(UIImageView *)imageView singleTapRecognizer:(UIGestureRecognizer *)touch {
+- (void)imageView:(UIImageView *)imageView singleTapRecognizer:(UITapGestureRecognizer *)touch {
     [self handleSingleTap:[touch locationInView:imageView]];
+    [_photoBrowser tapRecognizer:touch];
 }
-- (void)imageView:(UIImageView *)imageView doubleTapRecognizer:(UIGestureRecognizer *)touch {
+- (void)imageView:(UIImageView *)imageView doubleTapRecognizer:(UITapGestureRecognizer *)touch {
     [self handleDoubleTap:[touch locationInView:imageView]];
+    [_photoBrowser tapRecognizer:touch];
 }
+
 
 // Background View
 - (void)view:(UIView *)view singleTapDetected:(UITouch *)touch {

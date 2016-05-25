@@ -1532,6 +1532,12 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
 - (void)showControls { [self setControlsHidden:NO animated:YES permanent:NO]; }
 - (void)toggleControls { [self setControlsHidden:![self areControlsHidden] animated:YES permanent:NO]; }
 
+
+- (void)tapRecognizer:(UITapGestureRecognizer *)recognizer {
+    if ([self.delegate respondsToSelector:@selector(photoBrowser:tapGestureRecognizer:)]) {
+        [self.delegate photoBrowser:self tapGestureRecognizer:recognizer];
+    }
+}
 #pragma mark - Properties
 
 - (void)setCurrentPhotoIndex:(NSUInteger)index {

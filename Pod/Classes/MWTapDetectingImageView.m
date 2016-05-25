@@ -40,8 +40,11 @@
     UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleHandle:)];
     doubleTap.numberOfTapsRequired = 2;
     [self addGestureRecognizer:doubleTap];
-    
+    UITapGestureRecognizer *tripleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tripleHandle:)];
+    tripleTap.numberOfTapsRequired = 3;
+    [self addGestureRecognizer:tripleTap];
     [singleTap requireGestureRecognizerToFail:doubleTap];
+    [doubleTap requireGestureRecognizerToFail:tripleTap];
 }
 
 - (void)singleHandle:(UITapGestureRecognizer *)recognizer {
@@ -52,6 +55,11 @@
 - (void)doubleHandle:(UITapGestureRecognizer *)recognizer {
     if ([_tapDelegate respondsToSelector:@selector(imageView:doubleTapRecognizer:)])
         [_tapDelegate imageView:self doubleTapRecognizer:recognizer];
+}
+
+- (void)tripleHandle:(UITapGestureRecognizer *)recognizer {
+    if ([_tapDelegate respondsToSelector:@selector(imageView:tripleTapRecognizer:)])
+        [_tapDelegate imageView:self tripleTapRecognizer:recognizer];
 }
 
 //- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
