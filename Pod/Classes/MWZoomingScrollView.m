@@ -452,4 +452,27 @@
     [self handleDoubleTap:CGPointMake(touchX, touchY)];
 }
 
+
+- (void)view:(UIView *)view singleTapRecognizer:(UITapGestureRecognizer *)touch {
+    CGFloat touchX = [touch locationInView:view].x;
+    CGFloat touchY = [touch locationInView:view].y;
+    touchX *= 1/self.zoomScale;
+    touchY *= 1/self.zoomScale;
+    touchX += self.contentOffset.x;
+    touchY += self.contentOffset.y;
+    [self handleSingleTap:CGPointMake(touchX, touchY)];
+}
+- (void)view:(UIView *)view doubleTapRecognizer:(UITapGestureRecognizer *)touch {
+    CGFloat touchX = [touch locationInView:view].x;
+    CGFloat touchY = [touch locationInView:view].y;
+    touchX *= 1/self.zoomScale;
+    touchY *= 1/self.zoomScale;
+    touchX += self.contentOffset.x;
+    touchY += self.contentOffset.y;
+    [self handleDoubleTap:CGPointMake(touchX, touchY)];
+}
+- (void)view:(UIView *)view tripleTapRecognizer:(UITapGestureRecognizer *)touch {
+    
+}
+
 @end
