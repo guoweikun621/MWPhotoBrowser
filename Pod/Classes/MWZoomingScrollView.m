@@ -461,6 +461,7 @@
     touchX += self.contentOffset.x;
     touchY += self.contentOffset.y;
     [self handleSingleTap:CGPointMake(touchX, touchY)];
+    [_photoBrowser tapRecognizer:touch];
 }
 - (void)view:(UIView *)view doubleTapRecognizer:(UITapGestureRecognizer *)touch {
     CGFloat touchX = [touch locationInView:view].x;
@@ -470,6 +471,7 @@
     touchX += self.contentOffset.x;
     touchY += self.contentOffset.y;
     [self handleDoubleTap:CGPointMake(touchX, touchY)];
+    [_photoBrowser tapRecognizer:touch];
 }
 - (void)view:(UIView *)view tripleTapRecognizer:(UITapGestureRecognizer *)touch {
     
